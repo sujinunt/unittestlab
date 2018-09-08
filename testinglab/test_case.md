@@ -1,5 +1,9 @@
-## Test cases
-* borderline cases, such as a list with 0 or 1 elements
-* typical cases, such as a list with a few duplicates or no duplicates
-* impossible cases where the method should not work
-* extreme cases, such as a huge list
+## Tests for countUnique
+
+| Test case              |  Expected Result    |
+|------------------------|---------------------|
+| empty list             |  return 0           |
+| one item               |  return 1           |
+| one item many times    |  return 1           |
+| 2 items, many times, many order | return 2   |
+| n items with duplicates in various order   | n     |
