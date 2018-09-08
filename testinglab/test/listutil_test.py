@@ -1,6 +1,7 @@
 import unittest
 
 from listutil import count_unique
+from listutil import binary_search
 
 class Testing(unittest.TestCase):
     """Test count_unique function in Python. """
@@ -16,7 +17,12 @@ class Testing(unittest.TestCase):
     def test_extreme(self):
         """Test huge list."""
         self.assertEqual(count_unique(['a','b','b','b','a','c','c','d','d','d','f','e']), 6)
-
+    def test_normal(self):
+        """Test normal search."""
+        self.assertEqual(binary_search(['a','b','c','a'],'a'), 0)
+    def test_NotinList(self):
+        """Test the element not in list."""
+        self.assertEqual(binary_search(['a','b','c','a'],'d'), -1)
 
 if __name__ == '__main__':
     unittest.main()

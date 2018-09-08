@@ -20,4 +20,30 @@ def count_unique(lists):
     lists = list(lists)
     return  len(lists)
 
+def binary_search(lists, element):
+    """Search index of the matching element in a list.
+
+    The list and element can contain any kind of elements.
+
+    :param list:  list of elements to find where is index of element.
+    :return: the index of element in list.
+
+    Example:
+    >>> binary_search(['a','b','b','b','a','c','c'],"c")
+    2
+    >>> binary_search(['a','b','b','b','a','c','c'],"d")
+    -1
+    >>> binary_search(['a','b','b','b','a','c','c'],1)
+    -1
+    """
+
+    lists = set(lists)
+    newlist = list(lists)
+    sorts = sorted(newlist)
+    if element in lists:
+        return sorts.index(element)
+    elif element not in lists:
+        return -1
+    else:
+        raise TypeError("Search element must not be none")
 
